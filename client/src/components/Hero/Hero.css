@@ -1,0 +1,48 @@
+.hero {
+  background: var(--primary);
+  height: 80vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero .content {
+  width: 80%;
+  margin-top: 0;
+  margin-bottom: var(--space2);
+}
+
+.hero .content span {
+  position: relative;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 5px 10px;
+  color: var(--nav);
+  border: 2px solid var(--nav);
+  bottom: 0.8em;
+}
+
+.hero h1 {
+  width: 100%;
+  max-width: 25ch;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: auto;
+  color: var(--nav);
+}
+
+.pattern {
+  position: absolute;
+  right: 1em;
+  top: 5em;
+  width: 300px;
+  height: 600px;
+  background: url("../../../public/pattern.png");
+  background-size: cover;
+}
+
+@media only screen and (max-width: 880px) {
+  .pattern {
+    display: none;
+  }
+}

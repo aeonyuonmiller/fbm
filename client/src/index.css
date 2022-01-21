@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
+
+:root {
+  --primary: hsl(67, 0%, 57%);
+  /* --primary: hsl(67, 91%, 57%); */
+  --primary2: hsl(67, 90%, 44%);
+  --nav: hsla(276, 4%, 23%, 0.4);
+  --secondary: hsl(276, 4%, 23%);
+  --secondary2: hsl(273, 9%, 23%);
+  --secondary3: hsl(274, 16%, 42%);
+  --secondary4: hsl(274, 34%, 49%);
+  --accent: hsl(273, 100%, 40%);
+  --bg: hsl(274, 49%, 90%);
+  --white: rgb(232, 232, 232);
+  --pale: hsla(0, 0%, 91%, 0.522);
+
+  --space: 1em;
+  --space2: 2em;
+  --space3: 3em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+  /* line-height: 1.4em; */
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1  {
+  font-size: 48px;
+  line-height: 3rem;
+}
+
+h2  {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 300;
+  color: var(--primary2);
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
