@@ -6,13 +6,16 @@ const mentorSchema = new Schema({
   mentor: {
     type: String,
     required: true,
+    unique: true,
   },
-  age: String,
-  body: String,
-  date: { type: Date, default: Date.now },
-  hidden: Boolean,
-  meta: {
-    votes: Number,
-    favs: Number,
+  location: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
   },
 });
+
+export default mongoose.model("Mentor", mentorSchema);
