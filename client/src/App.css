@@ -38,14 +38,18 @@ nav ul li {
   position: fixed;
   right: 2em;
   /* right: calc(50% - 40px); */
-  top: calc(50vh - 40px);
+  top: 1em;
+  /* top: calc(50vh - 40px); */
   width: 80px;
-  filter: drop-shadow(0 5px 20px rgba(36, 41, 0, 0.2));
+  filter: drop-shadow(0 1px 0.5px rgba(36, 41, 0, 0.3));
   z-index: 10;
-  transition: all ease-in-out 0.2s;
+  transition: all ease-out 0.5s;
+  cursor: pointer;
 }
 .logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(360deg);
+  filter: drop-shadow(0 5px 15px rgba(36, 41, 0, 0.1));
+  transition: all ease-out 0.2s;
 }
 
 .content {

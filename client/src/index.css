@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap");
 
 :root {
-  --primary: hsl(67, 0%, 57%);
-  /* --primary: hsl(67, 91%, 57%); */
+  /* --primary: hsl(67, 0%, 57%); */
+  --primary: hsl(67, 91%, 57%);
   --primary2: hsl(67, 90%, 44%);
   --nav: hsla(276, 4%, 23%, 0.4);
   --secondary: hsl(276, 4%, 23%);
@@ -17,6 +17,7 @@
   --space: 1em;
   --space2: 2em;
   --space3: 3em;
+  --space4: 4rem;
 }
 
 body {

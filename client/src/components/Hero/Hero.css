@@ -3,12 +3,15 @@
   height: 80vh;
   display: flex;
   align-items: flex-end;
+  margin-top: -5em;
+  transform: skewY(6deg);
 }
 
 .hero .content {
   width: 80%;
   margin-top: 0;
-  margin-bottom: var(--space2);
+  margin-bottom: var(--space4);
+  transform: skewY(-6deg);
 }
 
 .hero .content span {
@@ -16,10 +19,11 @@
   font-size: 12px;
   font-weight: 700;
   border-radius: 30px;
-  padding: 5px 10px;
-  color: var(--nav);
-  border: 2px solid var(--nav);
-  bottom: 0.8em;
+  padding: 8px 10px;
+  margin: 0 -0.3em;
+  color: var(--primary);
+  background: var(--nav);
+  bottom: 0.6em;
 }
 
 .hero h1 {
@@ -33,12 +37,14 @@
 
 .pattern {
   position: absolute;
-  right: 1em;
-  top: 5em;
-  width: 300px;
-  height: 600px;
+  right: 5%;
+  top: 10em;
+  width: 32vw;
+  height: 25em;
   background: url("../../../public/pattern.png");
   background-size: cover;
+  z-index: 0;
+  filter: invert(100%);
 }
 
 @media only screen and (max-width: 880px) {
