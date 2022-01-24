@@ -4,6 +4,5 @@ import './Footer.css';
 export const Footer = () => {
     return <div className='footer'>
       <img src="./logo.png" />
-      <a href="#">More</a>
   </div>;
 };

@@ -57,7 +57,8 @@ nav ul li:hover {
 .logo {
   position: fixed;
   /* right: 2em; */
-  left: calc(50% - 40px);
+  left: 2em;
+  /* left: calc(50% - 40px); */
   top: 2em;
   /* top: calc(50vh - 40px); */
   width: 80px;

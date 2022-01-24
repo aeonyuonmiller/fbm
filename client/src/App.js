@@ -1,4 +1,5 @@
 import "./App.css";
+import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Hero/Footer";
 import { Hero } from "./components/Hero/Hero";
 
@@ -10,6 +11,7 @@ function App() {
         <ul>
           <li>Mixes</li>
           <li>Mentors</li>
+          <li>Shop</li>
           <li className="loginBtn">Login</li>
         </ul>
       </nav>
