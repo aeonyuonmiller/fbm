@@ -5,7 +5,7 @@ import { Hero } from "./components/Hero/Hero";
 
 function App() {
   return (
-    <>
+    <AnimatePresence>
       <div className="bg" />
       <nav>
         <ul>
@@ -29,7 +29,7 @@ function App() {
         <button>more</button>
       </div>
       <Footer />
-    </>
+    </AnimatePresence>
   );
 }
 
