@@ -1,6 +1,7 @@
 .hero {
-  background: var(--primary);
-  height: 80vh;
+  /* background: var(--primary); */
+  background: var(--white);
+  height: 95vh;
   display: flex;
   align-items: flex-end;
   margin-top: -5em;
@@ -16,38 +17,43 @@
 
 .hero .content span {
   position: relative;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   border-radius: 30px;
-  padding: 8px 10px;
+  padding: 8px 16px;
   margin: 0 -0.3em;
-  color: var(--primary);
-  background: var(--nav);
-  bottom: 0.6em;
+  color: var(--white);
+  background: var(--secondary);
+  bottom: 0.7em;
 }
 
 .hero h1 {
   width: 100%;
-  max-width: 25ch;
+  max-width: 22ch;
   margin-top: 0;
   margin-left: 0;
   margin-right: auto;
   color: var(--nav);
 }
 
+.hero h1 strong {
+  color: var(--secondary);
+}
+
 .pattern {
   position: absolute;
-  right: 5%;
-  top: 10em;
+  right: 0;
+  top: 19em;
   width: 32vw;
   height: 25em;
   background: url("../../../public/pattern.png");
   background-size: cover;
   z-index: 0;
-  filter: invert(100%);
+  filter: drop-shadow(16px 16px 20px) invert(30%);
+  transform: skewY(-6deg);
 }
 
-@media only screen and (max-width: 880px) {
+@media only screen and (max-width: 840px) {
   .pattern {
     display: none;
   }
