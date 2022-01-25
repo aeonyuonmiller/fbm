@@ -19,7 +19,7 @@ nav {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   height: auto;
-  padding: 0.5em 0;
+  gap: 0.5em 0;
   z-index: 10;
   overflow: hidden;
 }
@@ -121,6 +121,11 @@ button:hover {
 
 @media only screen and (max-width: 880px) {
   .logo {
-    right: 1em;
+    left: 1em;
+    top: 1em;
+    width: 60px;
+  }
+  nav ul {
+    margin-right: 0.5em;
   }
 }
