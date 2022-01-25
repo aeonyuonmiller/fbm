@@ -34,8 +34,9 @@ body {
 }
 
 h1 {
-  font-size: 44px;
+  font-size: 40px;
   font-weight: 300;
+  letter-spacing: -0.03em;
 }
 
 h2 {
