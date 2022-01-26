@@ -12,14 +12,13 @@
 - Mongoose
 - Nodemon
 - Dotenv
-- Cors
+- CORS
 
 ### ToDos
 
 - [ ] Fetch data from mongoDB (mentor-collection) with context
 - [ ] Mentors Data
 - [ ] Dashboard Data
-- [ ] Chat
 - [ ] Likes
 - [ ] Comments
 - [ ] Create Login component

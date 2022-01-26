@@ -128,4 +128,7 @@ button:hover {
   nav ul {
     margin-right: 0.5em;
   }
+  p {
+    font-size: 18px;
+  }
 }

@@ -12,7 +12,7 @@ export const Hero = () => {
 
     const { scrollYProgress } = useViewportScroll()
     const yLength = useTransform(scrollYProgress, [0, 1], [0, -100]);
-    const yMinusLength = useTransform(scrollYProgress, [0, .8], [0, 200]);
+    const yMinusLength = useTransform(scrollYProgress, [0, .8], [0, 100]);
     const trans = useTransform(scrollYProgress, [0, 1], [1, -1]);
     const size = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
     

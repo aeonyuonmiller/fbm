@@ -1,29 +1,13 @@
 import "./App.css";
 import { motion } from "framer-motion";
-import { useState, createContext } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Hero/Footer";
 import { Hero } from "./components/Hero/Hero";
-import axios from "axios";
-
-export const AppContext = createContext(null);
-
-const speed = {
-  hidden: { opacity: 0 },
-  enter: { opacity: 1, rotate: 360 },
-};
-
-// fetch of mentors collection
-async function getMentors() {
-  try {
-    const response = await axios.get("http://localhost:5000/api/mentors/all");
-    console.log("get mentors", response);
-  } catch (error) {
-    console.error(error);
-  }
-}
+import { MentorsContextProvider } from "./Context/Mentors";
+import { MentorList } from "./components/Hero/MentorList";
 
 function App() {
+  // animations
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -34,14 +18,17 @@ function App() {
       },
     },
   };
-
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
   };
+  const speed = {
+    hidden: { opacity: 0 },
+    enter: { opacity: 1, rotate: 360 },
+  };
 
   return (
-    <AppContext.Provider value={{}}>
+    <MentorsContextProvider>
       <AnimatePresence>
         <div className="bg" />
         <nav>
@@ -64,6 +51,7 @@ function App() {
           alt="Femme Bass Mafia"
         />
         <Hero />
+        <MentorList />
         <div className="content">
           <h2>Roboto Typeface</h2>
           <p>
@@ -78,7 +66,7 @@ function App() {
         </div>
         <Footer />
       </AnimatePresence>
-    </AppContext.Provider>
+    </MentorsContextProvider>
   );
 }
 
