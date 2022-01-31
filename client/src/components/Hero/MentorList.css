@@ -1,0 +1,32 @@
+.MentorWrapper {
+  display: grid;
+  height: 400px;
+  padding: 1em 4em 0 4em;
+  gap: 1.4em;
+  grid-template-columns: repeat(6, auto);
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
+
+.MentorWrapper h5 {
+  position: absolute;
+  margin-top: 4em;
+  width: 100px;
+  text-align: center;
+  left: calc(50% - 50px);
+}
+
+@media only screen and (max-width: 900px) {
+  .MentorWrapper {
+    height: 500px;
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .MentorWrapper {
+    height: 500px;
+    grid-template-columns: repeat(3, auto);
+  }
+}
