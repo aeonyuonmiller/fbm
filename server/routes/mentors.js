@@ -1,6 +1,8 @@
 import express from "express";
 import mentorsModel from "../models/mentorsModel.js";
 
+// here we are specifying the different endpoints
+
 const router = express.Router();
 
 router.get("/all", (req, res) => {

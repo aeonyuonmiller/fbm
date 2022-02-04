@@ -8,7 +8,8 @@ export const MentorList = () => {
     const { mentors } = React.useContext(MentorsContext)
     console.log(mentors);
 
-    return <div className="MentorWrapper">
+    return <>
+        <div className="MentorWrapper">
         <h5>Mentors</h5>
         <MentorAvatar text="Dangermami" />
         <MentorAvatar text="Luz1e" />
@@ -16,5 +17,6 @@ export const MentorList = () => {
         <MentorAvatar text="Name" />
         <MentorAvatar text="Celeste" />
         <MentorAvatar text="Whuuuud" />
-    </div>;
+        </div>
+    </>;
 };
