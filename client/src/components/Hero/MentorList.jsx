@@ -1,6 +1,6 @@
 import React from 'react';
 import './MentorList.css';
-import { MentorsContext } from '../../Context/Mentors';
+import { MentorsContext } from '../../Context/mentorsContext';
 import MentorAvatar from './MentorAvatar';
 
 export const MentorList = () => {
@@ -10,13 +10,10 @@ export const MentorList = () => {
 
     return <>
         <div className="MentorWrapper">
-        <h5>Mentors</h5>
-        <MentorAvatar text="Dangermami" />
-        <MentorAvatar text="Luz1e" />
-        <MentorAvatar text="DJ Fuckoff" />
-        <MentorAvatar text="Name" />
-        <MentorAvatar text="Celeste" />
-        <MentorAvatar text="Whuuuud" />
+            <h5>Mentors</h5>
+            {mentors.map(mentor => 
+                <MentorAvatar text={mentor.mentor} />
+            )}
         </div>
     </>;
 };

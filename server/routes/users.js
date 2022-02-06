@@ -1,15 +1,17 @@
 import express from "express";
 import bcrypt from "bcrypt";
 // jwt is used to identify the user as authenticated & authorized
+// authentification is the process of logging in
+// authorization is the process of deciding if you can acces a page or route or not
 import jwt from "jsonwebtoken";
-// passport secures routes – 4 different strategies (????)
+// passport secures routes (middleware)
 import passport from "passport";
-import userModel from "../models/userModel.js";
+//import userModel from "../models/userModel.js";
 
 const router = express.Router();
 
 // Route for register a user
-router.post("/register", (req, res) => {
+/* router.post("/register", (req, res) => {
   // Request Body - all data incorporated
   console.log(req.body);
   res.send("send");
@@ -44,13 +46,18 @@ router.post("/register", (req, res) => {
             });
 
             // Save the new User in our DB
+              newUser.save().then(user => {
+                res.json({message:"Success!", user: user})
+              }).catch(err => {
+                res.send(err)
+            })
           }
         });
       });
     }
-  });
+  }); 
 
   //
-});
+});*/
 
 export default router;

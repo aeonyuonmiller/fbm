@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Hero/Footer";
 import { Hero } from "./components/Hero/Hero";
-import { MentorsContextProvider } from "./Context/Mentors";
+import { MentorsContextProvider } from "./Context/mentorsContext";
 import { MentorList } from "./components/Hero/MentorList";
 
 function App() {

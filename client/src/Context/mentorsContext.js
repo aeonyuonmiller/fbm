@@ -3,14 +3,8 @@ import axios from "axios";
 
 const MentorsContext = React.createContext();
 
-// replace everything "mentors" with data getting fetched
-
 function MentorsContextProvider({ children }) {
   const [mentors, setMentors] = useState([]);
-
-  useEffect(() => {
-    fetchMentors(); // function will be called when DOM is mounted
-  }, []);
 
   async function fetchMentors() {
     try {
@@ -20,6 +14,10 @@ function MentorsContextProvider({ children }) {
       console.log(error);
     }
   }
+
+  useEffect(() => {
+    fetchMentors(); // function will be called when DOM is mounted
+  }, []);
 
   return (
     <MentorsContext.Provider value={{ mentors }}>
