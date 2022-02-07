@@ -1,0 +1,65 @@
+form#login {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  background: var(--primary);
+  border-radius: 18px;
+  padding: 1em;
+  width: 300px;
+  z-index: 50;
+}
+
+form input {
+  width: calc(100% - 5px);
+  height: 3em;
+  border-radius: 0;
+  box-shadow: 1.4px 1.4px 2.2px rgba(0, 0, 0, 0.02),
+    3.3px 3.3px 5.3px rgba(0, 0, 0, 0.028),
+    6.3px 6.3px 10px rgba(0, 0, 0, 0.035),
+    11.2px 11.2px 17.9px rgba(0, 0, 0, 0.042),
+    20.9px 20.9px 33.4px rgba(0, 0, 0, 0.05), 50px 50px 80px rgba(0, 0, 0, 0.07);
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: all ease 0.4s;
+}
+
+form input:focus {
+  background: var(--secondary);
+  outline: none;
+}
+
+form input:first-of-type {
+  border-radius: 8px 8px 0 0;
+}
+
+form input:last-of-type {
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 1em;
+  border-bottom: 0;
+}
+
+form input::placeholder {
+  padding-left: 1.5em;
+  text-transform: uppercase;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  transition: all ease 0.4s;
+}
+form input:focus::placeholder {
+  color: white;
+}
+
+form button {
+  background: var(--secondary);
+  font-size: 10px;
+  align-self: center;
+}
+
+form#login h5 {
+  width: 100%;
+  font-size: 12px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  color: var(--secondary);
+}

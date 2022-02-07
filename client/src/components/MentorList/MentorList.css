@@ -1,6 +1,6 @@
 .MentorWrapper {
   display: grid;
-  height: 400px;
+  min-height: 350px;
   padding: 1em 4em 0 4em;
   gap: 1.4em;
   grid-template-columns: repeat(6, auto);

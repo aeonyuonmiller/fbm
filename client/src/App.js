@@ -5,6 +5,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Hero } from "./components/Hero/Hero";
 import { MentorsContextProvider } from "./Context/mentorsContext";
 import { MentorList } from "./components/MentorList/MentorList";
+import LoginModal from "./components/LoginModal/LoginModal";
 
 function App() {
   // animations
@@ -52,6 +53,7 @@ function App() {
         />
         <Hero />
         <MentorList />
+        <LoginModal />
         <div className="content">
           <h2>Roboto Typeface</h2>
           <p>
@@ -59,10 +61,6 @@ function App() {
             transgender and non-binary people for the learning and practising of
             DJing.
           </p>
-          <h3>Femme Bass Mafia</h3>
-          <h4>Femme Bass Mafia</h4>
-          <h5>Kontakt</h5>
-          <button>more</button>
         </div>
         <Footer />
       </AnimatePresence>
