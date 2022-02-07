@@ -1,10 +1,10 @@
 import "./App.css";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import { Footer } from "./components/Hero/Footer";
+import { Footer } from "./components/Footer/Footer";
 import { Hero } from "./components/Hero/Hero";
 import { MentorsContextProvider } from "./Context/mentorsContext";
-import { MentorList } from "./components/Hero/MentorList";
+import { MentorList } from "./components/MentorList/MentorList";
 
 function App() {
   // animations
