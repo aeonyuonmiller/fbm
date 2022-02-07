@@ -4,6 +4,8 @@
   /* --primary: hsl(67, 0%, 57%); */
   --primary: hsl(67, 91%, 57%);
   --primary2: hsl(67, 90%, 44%);
+  --primary3: hsl(67, 90%, 30%);
+  --primary4: hsl(67, 90%, 20%);
   --nav: hsla(276, 4%, 23%, 0.4);
   --secondary: hsl(276, 4%, 23%);
   --secondary2: hsl(276, 4%, 28%);
@@ -58,7 +60,7 @@ h4 {
 h5 {
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 

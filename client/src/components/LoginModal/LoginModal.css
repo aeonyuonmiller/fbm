@@ -1,6 +1,6 @@
 form#login {
   position: fixed;
-  top: 1em;
+  top: 3em;
   right: 1em;
   background: var(--primary);
   border-radius: 18px;
@@ -10,6 +10,7 @@ form#login {
 }
 
 form input {
+  color: var(--secondary);
   width: calc(100% - 5px);
   height: 3em;
   border-radius: 0;
@@ -25,6 +26,7 @@ form input {
 
 form input:focus {
   background: var(--secondary);
+  color: white;
   outline: none;
 }
 
@@ -47,19 +49,28 @@ form input::placeholder {
 }
 form input:focus::placeholder {
   color: white;
+  padding-left: 3em;
 }
 
 form button {
   background: var(--secondary);
   font-size: 10px;
   align-self: center;
+  padding: 1em 2em;
+}
+
+form button:focus,
+form button:hover {
+  background: var(--secondary4);
+  outline: none;
 }
 
 form#login h5 {
   width: 100%;
-  font-size: 12px;
-  margin-top: 1em;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  margin-top: -0.3em;
   margin-bottom: 1em;
   text-align: center;
-  color: var(--secondary);
+  color: var(--primary3);
 }

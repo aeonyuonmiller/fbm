@@ -1,10 +1,11 @@
+import { useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Footer/Footer";
 import { Hero } from "./components/Hero/Hero";
 import { MentorsContextProvider } from "./Context/mentorsContext";
-import { MentorList } from "./components/MentorList/MentorList";
+import MentorList from "./components/MentorList/MentorList";
 import LoginModal from "./components/LoginModal/LoginModal";
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
     hidden: { opacity: 0 },
     enter: { opacity: 1, rotate: 360 },
   };
+
+  const [showModal, setShowModal] = useState(true);
 
   return (
     <MentorsContextProvider>
@@ -53,7 +56,7 @@ function App() {
         />
         <Hero />
         <MentorList />
-        <LoginModal />
+        <LoginModal showModal={showModal} setShowModal={setShowModal} />
         <div className="content">
           <h2>Roboto Typeface</h2>
           <p>

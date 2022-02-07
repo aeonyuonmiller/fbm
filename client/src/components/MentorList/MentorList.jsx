@@ -3,7 +3,7 @@ import './MentorList.css';
 import { MentorsContext } from '../../Context/mentorsContext';
 import MentorAvatar from './MentorAvatar';
 
-export const MentorList = () => {
+ const MentorList = () => {
 
     const { mentors } = React.useContext(MentorsContext)
     console.log(mentors);
@@ -17,3 +17,4 @@ export const MentorList = () => {
         </div>
     </>;
 };
+export default MentorList

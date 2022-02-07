@@ -11,7 +11,7 @@ import passport from "passport";
 const router = express.Router();
 
 // Route for register a user
-/* router.post("/register", (req, res) => {
+router.post("/register", (req, res) => {
   // Request Body - all data incorporated
   console.log(req.body);
   res.send("send");
@@ -46,18 +46,19 @@ const router = express.Router();
             });
 
             // Save the new User in our DB
-              newUser.save().then(user => {
-                res.json({message:"Success!", user: user})
-              }).catch(err => {
-                res.send(err)
-            })
-          }
-        });
-      });
-    }
-  }); 
-
-  //
-});*/
+            newUser
+              .save()
+              .then((user) => {
+                res.json({ message: "Success!", user: user });
+              })
+              .catch((err) => {
+                res.send(err);
+              });
+          } // closes else
+        }); // closes bcrypt hash
+      }); // closes bcrypt salt
+    } // closes else if user created
+  }); // closes userModel
+}); // closes router.post("/register")
 
 export default router;
