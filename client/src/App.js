@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "./App.css";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Footer/Footer";
@@ -29,7 +29,11 @@ function App() {
     enter: { opacity: 1, rotate: 360 },
   };
 
-  const [showModal, setShowModal] = useState(true);
+  // modal
+  const [openModal, setOpenModal] = useState(false);
+  const toggleModal = () => {
+    setOpenModal(!openModal);
+  };
 
   return (
     <MentorsContextProvider>
@@ -37,10 +41,25 @@ function App() {
         <div className="bg" />
         <nav>
           <motion.ul variants={container} initial="hidden" animate="show">
-            <motion.li variants={item}>Mixes</motion.li>
-            <motion.li variants={item}>Mentors</motion.li>
-            <motion.li variants={item}>Shop</motion.li>
-            <motion.li variants={item} className="loginBtn">
+            <motion.li variants={item} tabIndex={1}>
+              Mixes
+            </motion.li>
+            <motion.li variants={item} tabIndex={1}>
+              Mentors
+            </motion.li>
+            <motion.li variants={item} tabIndex={1}>
+              Shop
+            </motion.li>
+            <motion.li
+              tabIndex={1}
+              variants={item}
+              className="loginBtn"
+              onClick={toggleModal}
+              // inline way is not the cleanest
+              // onClick={() => {
+              //   setOpenModal(true);
+              // }}
+            >
               Login
             </motion.li>
           </motion.ul>
@@ -56,7 +75,7 @@ function App() {
         />
         <Hero />
         <MentorList />
-        <LoginModal showModal={showModal} setShowModal={setShowModal} />
+        {openModal && <LoginModal closeModal={toggleModal} />}
         <div className="content">
           <h2>Roboto Typeface</h2>
           <p>

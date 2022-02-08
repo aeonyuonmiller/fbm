@@ -1,3 +1,13 @@
+.backdrop {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 form#login {
   position: fixed;
   top: 3em;
@@ -7,12 +17,20 @@ form#login {
   padding: 1em;
   width: 300px;
   z-index: 50;
+  overflow: hidden;
+
+  box-shadow: 1.4px 1.4px 2.2px rgba(0, 0, 0, 0.02),
+    3.3px 3.3px 5.3px rgba(0, 0, 0, 0.028),
+    6.3px 6.3px 10px rgba(0, 0, 0, 0.035),
+    11.2px 11.2px 17.9px rgba(0, 0, 0, 0.042),
+    20.9px 20.9px 33.4px rgba(0, 0, 0, 0.05), 50px 50px 80px rgba(0, 0, 0, 0.07);
 }
 
 form input {
   color: var(--secondary);
-  width: calc(100% - 5px);
-  height: 3em;
+  width: calc(100% - 2.3em);
+  height: 4em;
+  padding-left: 2em;
   border-radius: 0;
   box-shadow: 1.4px 1.4px 2.2px rgba(0, 0, 0, 0.02),
     3.3px 3.3px 5.3px rgba(0, 0, 0, 0.028),
@@ -41,7 +59,7 @@ form input:last-of-type {
 }
 
 form input::placeholder {
-  padding-left: 1.5em;
+  padding-left: 0;
   text-transform: uppercase;
   font-size: 8px;
   letter-spacing: 0.2em;
@@ -49,7 +67,7 @@ form input::placeholder {
 }
 form input:focus::placeholder {
   color: white;
-  padding-left: 3em;
+  padding-left: 2em;
 }
 
 form button {
@@ -59,9 +77,21 @@ form button {
   padding: 1em 2em;
 }
 
+form button.secondary {
+  background: unset;
+  margin-left: 1em;
+  border: 0 solid white;
+  color: var(--secondary);
+}
+
+form button.secondary:hover {
+  background: var(--primary2);
+}
+
 form button:focus,
 form button:hover {
-  background: var(--secondary4);
+  color: var(--secondary);
+  background: var(--primary2);
   outline: none;
 }
 
