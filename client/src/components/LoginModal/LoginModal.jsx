@@ -17,14 +17,14 @@ import './LoginModal.css'
         hidden: { opacity: 0 }
     }
 
-    // modal
+    // modal function
     const closeModal = () => {
     closeModal(false);
   };
 
 const LoginModal = ({closeModal}) => {
 
-    return <AnimatePresence exitBeforeEnter>
+    return <>
             <motion.form
                 id="login"
                 variants={container}
@@ -46,7 +46,7 @@ const LoginModal = ({closeModal}) => {
                 exit="hidden"
                 onClick={closeModal}>
             </motion.div>
-    </AnimatePresence>;
+    </>
 };
 
 export default LoginModal;
