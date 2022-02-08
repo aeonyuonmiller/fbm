@@ -25,28 +25,27 @@ import './LoginModal.css'
 const LoginModal = ({closeModal}) => {
 
     return <AnimatePresence exitBeforeEnter>
+            <motion.form
+                id="login"
+                variants={container}
+                initial="hidden"
+                animate="show"
+                style={{ originX: 1 }}>
+                <h5>Login</h5>
+                <motion.input variants={input} initial="hidden" animate="show" type="text" placeholder="Username" />
+                <motion.input variants={input} initial="hidden" animate="show" type="email" placeholder="Email" />
+                <motion.input variants={input} initial="hidden" animate="show" type="password" placeholder="Password" />
+                <motion.button exit={{y:100}} initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
+                <motion.button exit={{y:100}} initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Sign Up</motion.button>
+            </motion.form>
             <motion.div
                 className="backdrop"
                 variants={backdrop}
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                onClick={closeModal}
-                >
-                <motion.form
-                    id="login"
-                    variants={container}
-                    initial="hidden"
-                    animate="show"
-                    style={{ originX: 1 }}>
-                    <h5>Login</h5>
-                <motion.input variants={input} initial="hidden" animate="show" type="text" placeholder="Username" />
-                <motion.input variants={input} initial="hidden" animate="show" type="email" placeholder="Email" />
-                <motion.input variants={input} initial="hidden" animate="show" type="password" placeholder="Password" />
-                <motion.button exit={{y:100}} initial={{y:100}} animate={{y:0, transition:{delay:.8, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
-                <motion.button exit={{y:100}} initial={{y:100}} animate={{y:0, transition:{delay:.95, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Sign Up</motion.button>
-                </motion.form>
-        </motion.div>
+                onClick={closeModal}>
+            </motion.div>
     </AnimatePresence>;
 };
 
