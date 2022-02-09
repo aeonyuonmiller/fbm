@@ -22,23 +22,23 @@ import './LoginModal.css'
     closeModal(false);
   };
 
-const LoginModal = ({closeModal}) => {
+const SignUpModal = ({closeModal}) => {
 
     return <>
-        <motion.form
-                drag
-                dragDirectionLock="x"
+            <motion.form
                 id="login"
                 variants={container}
                 initial="hidden"
                 animate="show"
                 exit="exit"
                 style={{ originX: 1 }}>
-                <h5>Login</h5>
+                <h5>Sign Up</h5>
+                <motion.input variants={input} initial="hidden" animate="show" type="text" placeholder="Full name" />
+                <motion.input variants={input} initial="hidden" animate="show" type="text" placeholder="Username" />
                 <motion.input variants={input} initial="hidden" animate="show" type="email" placeholder="Email" />
                 <motion.input variants={input} initial="hidden" animate="show" type="password" placeholder="Password" />
-                <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
-                <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Sign Up</motion.button>
+                <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Sign Up</motion.button>
+                <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Login</motion.button>
             </motion.form>
             <motion.div
                 className="backdrop"
@@ -51,4 +51,4 @@ const LoginModal = ({closeModal}) => {
     </>
 };
 
-export default LoginModal;
+export default SignUpModal;

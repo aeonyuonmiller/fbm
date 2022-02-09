@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { BrowserRouter } from "react-router-dom";
+import { motion, MotionConfig } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Footer/Footer";
 import { Hero } from "./components/Hero/Hero";
@@ -37,7 +38,7 @@ function App() {
 
   return (
     <MentorsContextProvider>
-      <AnimatePresence exitBeforeEnter>
+      <MotionConfig reducedMotion="user">
         <div className="bg" />
         <nav>
           <motion.ul variants={container} initial="hidden" animate="show">
@@ -46,9 +47,6 @@ function App() {
             </motion.li>
             <motion.li variants={item} tabIndex={1}>
               Mentors
-            </motion.li>
-            <motion.li variants={item} tabIndex={1}>
-              Shop
             </motion.li>
             <motion.li
               tabIndex={1}
@@ -87,7 +85,7 @@ function App() {
           </p>
         </div>
         <Footer />
-      </AnimatePresence>
+      </MotionConfig>
     </MentorsContextProvider>
   );
 }

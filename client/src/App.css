@@ -46,6 +46,17 @@ nav ul li {
   z-index: 10;
 }
 
+/* extend click area */
+nav ul li:after {
+  content: "";
+  position: absolute;
+  left: -0.5em;
+  top: -1em;
+  right: -0.5em;
+  min-width: 50px;
+  min-height: 50px;
+}
+
 .loginBtn {
   background: var(--secondary5);
 }
