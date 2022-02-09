@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import './LoginModal.css'
 
     // animations
@@ -26,8 +25,6 @@ const LoginModal = ({closeModal}) => {
 
     return <>
         <motion.form
-                drag
-                dragDirectionLock="x"
                 id="login"
                 variants={container}
                 initial="hidden"

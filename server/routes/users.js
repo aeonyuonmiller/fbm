@@ -11,7 +11,7 @@ import passport from "passport";
 const router = express.Router();
 
 // Route for register a user
-router.post("/register", (req, res) => {
+router.post("/signup", (req, res) => {
   // Request Body - all data incorporated
   console.log(req.body);
   res.send("send");
@@ -59,6 +59,6 @@ router.post("/register", (req, res) => {
       }); // closes bcrypt salt
     } // closes else if user created
   }); // closes userModel
-}); // closes router.post("/register")
+}); // closes router.post
 
 export default router;

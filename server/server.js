@@ -1,19 +1,19 @@
-import express from "express";
 import cors from "cors";
+import express from "express";
+import mongoose from "mongoose";
 import mentorRoute from "./routes/mentors.js";
 import userRoute from "./routes/users.js";
+// import loginRoute from "./routes/login"
 import dotenv from "dotenv";
-import mongoose from "mongoose";
 
 // allow our server to have ENVironmental-variables
 dotenv.config();
 
-// Initialize Backend Server App
+// Init express
 const app = express();
-// Port
 const port = process.env.PORT || 5000;
 
-// Connection DB MongoDB
+// Connection to MongoDB
 mongoose
   .connect(process.env.DB)
   .then(() => console.log("Connected to MongoDB"))
@@ -34,6 +34,9 @@ app.use(cors());
 // Definition of endpoints in Router
 app.use("/api/mentors", mentorRoute);
 app.use("/api/users", userRoute);
+// signup and login
+// app.use("/login", loginRoute);
+// app.use("/signup", signupRoute);
 
 app.listen(port, () => {
   console.log("Server is running on " + port + "port");
