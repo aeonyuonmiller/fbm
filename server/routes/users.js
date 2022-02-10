@@ -6,7 +6,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 // passport secures routes (middleware)
 import passport from "passport";
-//import userModel from "../models/userModel.js";
+import UserModel from "../models/userModel.js";
 
 const router = express.Router();
 
@@ -14,14 +14,14 @@ const router = express.Router();
 router.post("/signup", (req, res) => {
   // Request Body - all data incorporated
   console.log(req.body);
-  res.send("send");
 
   // Input-fields
+  const reqUsername = req.body.username;
   const reqEmail = req.body.email;
   const reqName = req.body.name;
   const reqPassword = req.body.password;
 
-  userModel.findOne({ email: reqEmail }, (err, user) => {
+  UserModel.findOne({ email: reqEmail }, (err, user) => {
     if (err) {
       res.send(err);
     }
@@ -40,6 +40,7 @@ router.post("/signup", (req, res) => {
 
             // Create new user
             const newUser = new UserModel({
+              username: reqUsername,
               name: reqName,
               email: reqEmail,
               password: hash,

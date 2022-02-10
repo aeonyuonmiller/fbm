@@ -8,9 +8,9 @@
   right: 0;
 }
 
-form#login {
+form.login {
   position: fixed;
-  top: 3em;
+  top: 4em;
   right: 1em;
   background: var(--primary);
   border-radius: 18px;
@@ -95,7 +95,7 @@ form button:hover {
   outline: none;
 }
 
-form#login h5 {
+form.login h5 {
   width: 100%;
   font-size: 10px;
   letter-spacing: 0.1em;

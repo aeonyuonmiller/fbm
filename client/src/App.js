@@ -1,6 +1,5 @@
 import "./App.css";
 import { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
 import { motion, MotionConfig } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Footer/Footer";
@@ -53,7 +52,7 @@ function App() {
               variants={item}
               className="loginBtn"
               onClick={toggleModal}
-              // inline is not the cleanest
+              // inline isn't the cleanest
               // onClick={() => {
               //   setOpenModal(true);
               // }}

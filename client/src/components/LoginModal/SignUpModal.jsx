@@ -26,7 +26,7 @@ const SignUpModal = ({closeModal}) => {
 
     return <>
             <motion.form
-                id="login"
+                className="login"
                 variants={container}
                 initial="hidden"
                 animate="show"

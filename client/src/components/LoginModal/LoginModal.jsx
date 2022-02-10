@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import { motion } from "framer-motion";
 import './LoginModal.css'
 
@@ -16,35 +17,38 @@ import './LoginModal.css'
         hidden: { opacity: 0 }
     }
 
-    // modal function
-    const closeModal = () => {
-    closeModal(false);
-  };
+const LoginModal = ({ closeModal }) => {
 
-const LoginModal = ({closeModal}) => {
+    // useStates
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    
+    // useRefs
+    const emailRef = useRef();
+    const passwordRef = useRef();
 
     return <>
         <motion.form
-                id="login"
-                variants={container}
-                initial="hidden"
-                animate="show"
-                exit="exit"
-                style={{ originX: 1 }}>
-                <h5>Login</h5>
-                <motion.input variants={input} initial="hidden" animate="show" type="email" placeholder="Email" />
-                <motion.input variants={input} initial="hidden" animate="show" type="password" placeholder="Password" />
-                <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
-                <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Sign Up</motion.button>
-            </motion.form>
-            <motion.div
-                className="backdrop"
-                variants={backdrop}
-                initial="hidden"
-                animate="show"
-                exit="hidden"
-                onClick={closeModal}>
-            </motion.div>
+            className="login"
+            variants={container}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+            style={{ originX: 1 }}>
+            <h5>Login</h5>
+            <motion.input value={email} ref={emailRef} variants={input} initial="hidden" animate="show" type="email" placeholder="Email" />
+            <motion.input value={password} ref={passwordRef} variants={input} initial="hidden" animate="show" type="password" placeholder="Password" />
+            <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
+            <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Sign Up</motion.button>
+        </motion.form>
+        <motion.div
+            className="backdrop"
+            variants={backdrop}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            onClick={closeModal}>
+        </motion.div>
     </>
 };
 
