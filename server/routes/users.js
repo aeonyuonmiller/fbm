@@ -10,7 +10,7 @@ import UserModel from "../models/userModel.js";
 
 const router = express.Router();
 
-// Route for register a user
+// Route to register a user
 router.post("/signup", (req, res) => {
   // Request Body - all data incorporated
   console.log(req.body);

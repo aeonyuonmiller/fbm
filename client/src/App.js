@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { motion, MotionConfig } from "framer-motion";
+import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Footer/Footer";
 import { Hero } from "./components/Hero/Hero";

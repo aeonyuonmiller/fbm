@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
+import { Link, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
-import './LoginModal.css'
+import './LoginModal.css';
+import SignUpModal from "./SignUpModal";
 
     // animations
     const container = {
@@ -28,27 +30,30 @@ const LoginModal = ({ closeModal }) => {
     const passwordRef = useRef();
 
     return <>
-        <motion.form
-            className="login"
+        <motion.form layoutId="form" className="login"
             variants={container}
             initial="hidden"
             animate="show"
             exit="exit"
             style={{ originX: 1 }}>
             <h5>Login</h5>
-            <motion.input value={email} ref={emailRef} variants={input} initial="hidden" animate="show" type="email" placeholder="Email" />
-            <motion.input value={password} ref={passwordRef} variants={input} initial="hidden" animate="show" type="password" placeholder="Password" />
-            <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
-            <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Sign Up</motion.button>
+            <motion.input value={email} ref={emailRef} variants={input} initial="hidden" animate="show" exit="hidden" type="email" placeholder="Email" />
+            <motion.input value={password} ref={passwordRef} variants={input} initial="hidden" animate="show" exit="hidden" type="password" placeholder="Password" />
+            <Link to="/"><motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button></Link>
+            <Link to="signup"><motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Sign Up</motion.button></Link>
         </motion.form>
-        <motion.div
-            className="backdrop"
+        <Link to="/"><motion.div className="backdrop"
+            layoutId="backdrop"
             variants={backdrop}
             initial="hidden"
             animate="show"
             exit="hidden"
             onClick={closeModal}>
-        </motion.div>
+        </motion.div></Link>
+
+        <Routes>
+            <Route path="signup" element={<SignUpModal />} />
+        </Routes>
     </>
 };
 

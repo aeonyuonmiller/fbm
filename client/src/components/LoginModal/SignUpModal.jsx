@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link, Routes, Route } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import LoginModal from "./LoginModal";
 import './LoginModal.css'
 
     // animations
@@ -17,16 +19,10 @@ import './LoginModal.css'
         hidden: { opacity: 0 }
     }
 
-    // modal function
-    const closeModal = () => {
-    closeModal(false);
-  };
-
 const SignUpModal = ({closeModal}) => {
 
     return <>
-            <motion.form
-                className="login"
+            <motion.form layoutId="form" className="login"
                 variants={container}
                 initial="hidden"
                 animate="show"
@@ -37,17 +33,23 @@ const SignUpModal = ({closeModal}) => {
                 <motion.input variants={input} initial="hidden" animate="show" type="text" placeholder="Username" />
                 <motion.input variants={input} initial="hidden" animate="show" type="email" placeholder="Email" />
                 <motion.input variants={input} initial="hidden" animate="show" type="password" placeholder="Password" />
-                <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Sign Up</motion.button>
-                <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .8, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Login</motion.button>
+                <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Sign Up</motion.button>
+                <Link to="/"><motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Login</motion.button></Link>
             </motion.form>
-            <motion.div
-                className="backdrop"
+            {/* <Link to="/"><motion.div className="backdrop"
+                layoutId="backdrop"
                 variants={backdrop}
                 initial="hidden"
                 animate="show"
                 exit="hidden"
                 onClick={closeModal}>
-            </motion.div>
+                </motion.div></Link> */}
+        
+        <Routes>
+            <Route path="/" />
+            <Route path="login" element={<LoginModal />} />
+            <Route path="/signup" element={<SignUpModal />} />
+        </Routes>
     </>
 };
 
