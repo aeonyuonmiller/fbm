@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Link, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
 import './LoginModal.css';
-import SignUpModal from "./SignUpModal";
+// import SignUpModal from "./SignUpModal";
 
     // animations
     const container = {
@@ -20,14 +20,10 @@ import SignUpModal from "./SignUpModal";
     }
 
 const LoginModal = ({ closeModal }) => {
-
-    // useStates
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
     
     // useRefs
-    const emailRef = useRef();
-    const passwordRef = useRef();
+    const emailRef = useRef("");
+    const passwordRef = useRef("");
 
     return <>
         <motion.form layoutId="form" className="login"
@@ -37,9 +33,9 @@ const LoginModal = ({ closeModal }) => {
             exit="exit"
             style={{ originX: 1 }}>
             <h5>Login</h5>
-            <motion.input value={email} ref={emailRef} variants={input} initial="hidden" animate="show" exit="hidden" type="email" placeholder="Email" />
-            <motion.input value={password} ref={passwordRef} variants={input} initial="hidden" animate="show" exit="hidden" type="password" placeholder="Password" />
-            <Link to="/"><motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button></Link>
+            <motion.input ref={emailRef} variants={input} initial="hidden" animate="show" exit="hidden" type="email" placeholder="Email" />
+            <motion.input ref={passwordRef} variants={input} initial="hidden" animate="show" exit="hidden" type="password" placeholder="Password" />
+            <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
             <Link to="signup"><motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Sign Up</motion.button></Link>
         </motion.form>
         <Link to="/"><motion.div className="backdrop"
@@ -51,9 +47,9 @@ const LoginModal = ({ closeModal }) => {
             onClick={closeModal}>
         </motion.div></Link>
 
-        <Routes>
+        {/* <Routes>
             <Route path="signup" element={<SignUpModal />} />
-        </Routes>
+        </Routes> */}
     </>
 };
 

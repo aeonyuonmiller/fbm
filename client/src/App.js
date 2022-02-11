@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { motion, MotionConfig } from "framer-motion";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Footer/Footer";
 import { Hero } from "./components/Hero/Hero";
@@ -48,18 +48,20 @@ function App() {
             <motion.li variants={item} tabIndex={1}>
               Mentors
             </motion.li>
-            <motion.li
-              tabIndex={1}
-              variants={item}
-              className="loginBtn"
-              onClick={toggleModal}
-              // inline isn't the cleanest
-              // onClick={() => {
-              //   setOpenModal(true);
-              // }}
-            >
-              Login
-            </motion.li>
+            <Link to="/login">
+              <motion.li
+                tabIndex={1}
+                variants={item}
+                className="loginBtn"
+                // onClick={toggleModal}
+                // inline isn't the cleanest
+                // onClick={() => {
+                //   setOpenModal(true);
+                // }}
+              >
+                Login
+              </motion.li>
+            </Link>
           </motion.ul>
         </nav>
         <motion.img
