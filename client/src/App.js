@@ -31,10 +31,10 @@ function App() {
   };
 
   // modal state
-  const [openModal, setOpenModal] = useState(false);
-  const toggleModal = () => {
-    setOpenModal(!openModal);
-  };
+  // const [openModal, setOpenModal] = useState(false);
+  // const toggleModal = () => {
+  //   setOpenModal(!openModal);
+  // };
 
   return (
     <MentorsContextProvider>
@@ -48,7 +48,7 @@ function App() {
             <motion.li variants={item} tabIndex={1}>
               Mentors
             </motion.li>
-            <Link to="/login">
+            <Link to="/login" state={{ fromHome: true }}>
               <motion.li
                 tabIndex={1}
                 variants={item}
@@ -76,7 +76,7 @@ function App() {
         <Hero />
         <MentorList />
         <AnimatePresence exitBeforeEnter>
-          {openModal && <LoginModal closeModal={toggleModal} />}
+          {/* {openModal && <LoginModal closeModal={toggleModal} />} */}
         </AnimatePresence>
         <div className="content">
           <h2>Roboto Typeface</h2>
