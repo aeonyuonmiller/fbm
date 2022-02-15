@@ -5,11 +5,11 @@ import './LoginModal.css';
 // import SignUpModal from "./SignUpModal";
 
     // animations
-    // const container = {
-    //     hidden: { opacity: 0, scale: 0.9, x: 200 },
-    //     show: { opacity: 1, scale: 1, x: "0%", transition:{ease: [0.9, 0, 0.1, 1], duration: 1}},
-    //     exit: { opacity: 1, x: "120%", transition:{type:"tween", duration: .6}}
-    // }
+    const container = {
+        hidden: { opacity: 0, scale: 0.9, x: 200 },
+        show: { opacity: 1, scale: 1, x: "0%", transition:{ease: [0.9, 0, 0.1, 1], duration: 1}},
+        exit: { opacity: 1, x: "120%", transition:{type:"tween", duration: .6}}
+    }
 
 const LoginModal = () => {
     
@@ -19,7 +19,7 @@ const LoginModal = () => {
 
     const location = useLocation()
     const { fromHome } = location.state
-    console.log('fromHome', fromHome);
+    // console.log('fromHome', fromHome);
 
     const container = {
         hidden: fromHome ? { opacity: 0, scale: 0.9, x: 200 } : { opacity: 1, scale: 0.9, x: 0 },
@@ -35,8 +35,6 @@ const LoginModal = () => {
         hidden: { opacity: 0 }
     }
     
-   
-    
     return <>
         <motion.form layoutId="form" className="login"
             variants={container}
@@ -44,7 +42,7 @@ const LoginModal = () => {
             animate="show"
             exit="exit"
             style={{ originX: 1 }}>
-            <motion.h5 layoutId="title">Login</motion.h5>
+            <h5 layoutId="title">Login</h5>
             <motion.input layoutId="email" ref={emailRef} variants={input} initial="hidden" animate="show" exit="hidden" type="email" placeholder="Email" />
             <motion.input layoutId="password" ref={passwordRef} variants={input} initial="hidden" animate="show" exit="hidden" type="password" placeholder="Password" />
             <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>

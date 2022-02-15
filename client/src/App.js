@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { motion, MotionConfig } from "framer-motion";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Footer } from "./components/Footer/Footer";
 import { Hero } from "./components/Hero/Hero";
@@ -75,9 +75,9 @@ function App() {
         />
         <Hero />
         <MentorList />
-        <AnimatePresence exitBeforeEnter>
-          {/* {openModal && <LoginModal closeModal={toggleModal} />} */}
-        </AnimatePresence>
+        {/* <AnimatePresence exitBeforeEnter>
+          {openModal && <LoginModal closeModal={toggleModal} />}
+        </AnimatePresence> */}
         <div className="content">
           <h2>Roboto Typeface</h2>
           <p>

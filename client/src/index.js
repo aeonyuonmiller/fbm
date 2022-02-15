@@ -6,6 +6,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import LoginModal from "./components/LoginModal/LoginModal";
 import SignUpModal from "./components/LoginModal/SignUpModal";
+import Error from "./components/Error/Error";
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -16,6 +18,7 @@ ReactDOM.render(
           <Route path="login" element={<LoginModal />} />
           <Route path="signup" element={<SignUpModal />} />
         </Route>
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
