@@ -27,6 +27,9 @@ const SignUpModal = ({ closeModal }) => {
     const emailRef      = useRef();
     const passwordRef   = useRef();
     
+    // location log
+    const location = useLocation()
+    
     // function handleSignUp() { ... }
 
     // actions
