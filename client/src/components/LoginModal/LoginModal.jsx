@@ -8,7 +8,7 @@ import './LoginModal.css';
     const container = {
         hidden: { opacity: 0, scale: 0.9, x: 200 },
         show: { opacity: 1, scale: 1, x: "0%", transition:{ease: [0.9, 0, 0.1, 1], duration: 1}},
-        exit: { opacity: 1, x: "120%", transition:{type:"tween", duration: .6}}
+        exit: { opacity: 1, x: "120%", transition:{type:"tween", duration: .4}}
     }
 
 const LoginModal = () => {
@@ -17,12 +17,11 @@ const LoginModal = () => {
     const emailRef = useRef("");
     const passwordRef = useRef("");
 
+    // location log
     const location = useLocation()
-    const { fromHome } = location.state
-    // console.log('fromHome', fromHome);
 
     const container = {
-        hidden: fromHome ? { opacity: 0, scale: 0.9, x: 200 } : { opacity: 1, scale: 0.9, x: 0 },
+        hidden: { opacity: 0, scale: 0.9, x: 200 },
         show: { opacity: 1, scale: 1, x: "0%", transition:{ease: [0.9, 0, 0.1, 1], duration: 1}},
         exit: { opacity: 1, x: "120%", transition:{type: "tween", duration: .6}}
     }

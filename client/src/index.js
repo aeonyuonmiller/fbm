@@ -4,22 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import LoginModal from "./components/LoginModal/LoginModal";
-import SignUpModal from "./components/LoginModal/SignUpModal";
-import Error from "./components/Error/Error";
+
+import AnimatedRoutes from "./AnimatedRoutes";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
-
-      <Routes>
-        <Route path="/">
-          <Route path="login" element={<LoginModal />} />
-          <Route path="signup" element={<SignUpModal />} />
-        </Route>
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <AnimatedRoutes />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
