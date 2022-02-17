@@ -7,7 +7,6 @@ import LoginModal from "./components/LoginModal/LoginModal";
 import SignUpModal from "./components/LoginModal/SignUpModal";
 import Dashboard from "./Views/Dashboard/Dashboard";
 import Landingpage from "./Views/Landingpage/Landingpage";
-import App from "./App";
 
 const AnimatedRoutes = () => {
     const location = useLocation();
