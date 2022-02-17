@@ -5,17 +5,17 @@ import { AnimatePresence } from "framer-motion";
 import Error from "./components/Error/Error";
 import LoginModal from "./components/LoginModal/LoginModal";
 import SignUpModal from "./components/LoginModal/SignUpModal";
-import Dashboard from "./Pages/Dashboard/Dashboard";
-import Landingpage from "./Pages/Landingpage/Landingpage";
+import Dashboard from "./Views/Dashboard/Dashboard";
+import Landingpage from "./Views/Landingpage/Landingpage";
 import App from "./App";
 
 const AnimatedRoutes = () => {
     const location = useLocation();
-    const { pathname } = location;
+    // const { pathname } = location;
 
   return (
-    // <AnimatePresence exitBeforeEnter>
-      <AnimatePresence exitBeforeEnter={pathname === "/" ? true : false}>
+    // <AnimatePresence exitBeforeEnter={pathname === "/" ? true : false}>
+    <AnimatePresence exitBeforeEnter>
       <Routes location={location}>
         <Route path="/" element={<Landingpage />}>
           <Route path="login" element={<LoginModal />}/>

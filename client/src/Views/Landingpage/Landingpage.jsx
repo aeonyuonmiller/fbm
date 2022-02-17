@@ -23,13 +23,12 @@ const Landingpage = () => {
   };
   const speed = {
     hidden: { opacity: 0 },
-    enter: { opacity: 1, rotate: 360 },
+    enter:  { opacity: 1, rotate: 360 },
   };
 
   return <>
       <div className="bg" />
           <motion.img
-            drag
             initial="hidden"
             animate="enter"
             variants={speed}

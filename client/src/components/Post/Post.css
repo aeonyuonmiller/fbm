@@ -1,0 +1,10 @@
+.post {
+  background: var(--secondary4);
+  border-radius: 0 20px 20px 20px;
+  margin-bottom: 1em;
+}
+
+.post-content {
+  position: relative;
+  padding: 5px 20px;
+}
