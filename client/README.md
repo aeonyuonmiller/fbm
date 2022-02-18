@@ -1,3 +1,5 @@
+# README
+
 ## Includes
 
 ### Frontend
@@ -16,7 +18,7 @@
 
 ### ToDos
 
-- [ ] Fetch data from mongoDB (mentor-collection) with context
+- [x] Fetch data from mongoDB (mentor-collection) with context
 - [ ] Mentors Data
 - [ ] Dashboard Data
 - [ ] Likes
