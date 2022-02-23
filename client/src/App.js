@@ -14,8 +14,8 @@ function App() {
     <LocomotiveScrollProvider containerRef={containerRef}>
       <MentorsContextProvider>
         <Router>
-          <AnimatedRoutes data-scroll-container ref={containerRef} />
           <MotionConfig reducedMotion="user">
+            <AnimatedRoutes data-scroll-container ref={containerRef} />
             <Nav />
           </MotionConfig>
         </Router>

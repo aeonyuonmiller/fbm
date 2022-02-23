@@ -1,6 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
 
@@ -29,7 +28,7 @@ export default function Nav() {
               <Link to="/dashboard"><motion.li variants={item} tabIndex={1}>
                 Dashboard
               </motion.li></Link>
-              <Link to="/login" state={{ fromHome: true }}>
+              <Link to="/login">
                 <motion.li
                   tabIndex={1}
                   variants={item}
