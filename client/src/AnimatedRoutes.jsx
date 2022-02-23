@@ -19,19 +19,11 @@ const AnimatedRoutes = () => {
         <Route exact path="/">
           <Landingpage />
         </Route>
-        <Route path="/login">
-          <LoginModal/>
-        </Route>
-        <Route path="signup">
-          <SignUpModal />
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
-        <Route path="*">
-          <Error />
-        </Route>
-        </Switch>
+        <Route path="/login" children={<LoginModal />}/>
+        <Route path="signup" children={<SignUpModal />}/>
+        <Route path="/dashboard" children={<Dashboard/>}/>
+        <Route path="*" children={<Error />}/>
+      </Switch>
     </AnimatePresence>
   );
 };
