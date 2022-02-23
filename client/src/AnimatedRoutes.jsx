@@ -16,9 +16,7 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence exitBeforeEnter>
       <Switch location={background || location}>
-        <Route exact path="/">
-          <Landingpage />
-        </Route>
+        <Route exact path="/" children={<Landingpage/>}/>
         <Route path="/login" children={<LoginModal />}/>
         <Route path="signup" children={<SignUpModal />}/>
         <Route path="/dashboard" children={<Dashboard/>}/>
