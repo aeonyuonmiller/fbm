@@ -1,29 +1,26 @@
 import "./App.css";
-// import { useState } from "react";
-import { motion, MotionConfig } from "framer-motion";
-import Nav from "./components/Nav/Nav";
+import { useRef } from "react";
+import { MotionConfig } from "framer-motion";
 import { MentorsContextProvider } from "./Context/mentorsContext";
-
-import { BrowserRouter, Outlet } from "react-router-dom";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { BrowserRouter as Router } from "react-router-dom";
 import AnimatedRoutes from "./AnimatedRoutes";
+import Nav from "./components/Nav/Nav";
 
 function App() {
-  // modal state
-  // const [openModal, setOpenModal] = useState(false);
-  // const toggleModal = () => {
-  //   setOpenModal(!openModal);
-  // };
+  const containerRef = useRef(null);
 
   return (
-    <MentorsContextProvider>
-      <BrowserRouter>
-        <AnimatedRoutes />
-        <MotionConfig reducedMotion="user">
-          <Nav />
-          <Outlet />
-        </MotionConfig>
-      </BrowserRouter>
-    </MentorsContextProvider>
+    <LocomotiveScrollProvider containerRef={containerRef}>
+      <MentorsContextProvider>
+        <Router>
+          <AnimatedRoutes data-scroll-container ref={containerRef} />
+          <MotionConfig reducedMotion="user">
+            <Nav />
+          </MotionConfig>
+        </Router>
+      </MentorsContextProvider>
+    </LocomotiveScrollProvider>
   );
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
 
@@ -26,12 +26,9 @@ export default function Nav() {
     
     return <nav>
             <motion.ul variants={container} initial="hidden" animate="show">
-              <motion.li variants={item} tabIndex={1}>
-                Mixes
-              </motion.li>
-              <motion.li variants={item} tabIndex={1}>
-                Mentors
-              </motion.li>
+              <Link to="/dashboard"><motion.li variants={item} tabIndex={1}>
+                Dashboard
+              </motion.li></Link>
               <Link to="/login" state={{ fromHome: true }}>
                 <motion.li
                   tabIndex={1}

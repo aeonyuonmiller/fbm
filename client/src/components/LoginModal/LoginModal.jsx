@@ -2,14 +2,6 @@ import { useRef, useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import './LoginModal.css';
-// import SignUpModal from "./SignUpModal";
-
-    // animations
-    const container = {
-        hidden: { opacity: 0, scale: 0.9, x: 200 },
-        show: { opacity: 1, scale: 1, x: "0%", transition:{ease: [0.9, 0, 0.1, 1], duration: 1}},
-        exit: { opacity: 1, x: "120%", transition:{type:"tween", duration: .4}}
-    }
 
 const LoginModal = () => {
     

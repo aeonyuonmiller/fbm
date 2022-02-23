@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { Outlet } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import { Hero } from "../../components/Hero/Hero";
 import MentorList from "../../components/MentorList/MentorList";
@@ -36,7 +35,6 @@ const Landingpage = () => {
             className="logo"
             alt="Femme Bass Mafia"
       />
-          <Outlet />
           <Hero />
           <MentorList />
           {/* <AnimatePresence exitBeforeEnter>

@@ -1,4 +1,4 @@
-import { useLocation, Routes, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 // Pages
@@ -9,20 +9,26 @@ import Dashboard from "./Views/Dashboard/Dashboard";
 import Landingpage from "./Views/Landingpage/Landingpage";
 
 const AnimatedRoutes = () => {
-    const location = useLocation();
-    // const { pathname } = location;
 
   return (
-    // <AnimatePresence exitBeforeEnter={pathname === "/" ? true : false}>
     <AnimatePresence exitBeforeEnter>
-      <Routes location={location}>
-        <Route path="/" element={<Landingpage />}>
-          <Route path="login" element={<LoginModal />}/>
-          <Route path="signup" element={<SignUpModal/>}/>
+      <Switch>
+        <Route path="/">
+          <Landingpage />
         </Route>
-        <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="*" element={<Error/>}/>
-      </Routes>
+        <Route path="/login">
+          <LoginModal/>
+        </Route>
+        <Route path="signup">
+          <SignUpModal />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+        </Switch>
     </AnimatePresence>
   );
 };
