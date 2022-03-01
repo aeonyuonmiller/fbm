@@ -1,3 +1,3 @@
 # README
 
-This project is the platform for Femme Bass Mafia.
+This project is the platform for a female dj mentoring collective.

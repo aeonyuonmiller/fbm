@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { MotionConfig } from "framer-motion";
 import { MentorsContextProvider } from "./Context/mentorsContext";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
@@ -15,7 +15,9 @@ function App() {
       <MentorsContextProvider>
         <Router>
           <MotionConfig reducedMotion="user">
-            <AnimatedRoutes data-scroll-container ref={containerRef} />
+            {/* data-scroll-container ref={containerRef} */}
+            <AnimatedRoutes />
+
             <Nav />
           </MotionConfig>
         </Router>
