@@ -3,10 +3,8 @@ import { useRef, useState } from 'react';
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import './LoginModal.css';
-// import Landingpage from '../../Views/Landingpage/Landingpage';
 
-const LoginModal = ({closeModal}) => {
-    
+const LoginModal = ({closeModal}) => {    
     // useRefs
     const emailRef = useRef("");
     const passwordRef = useRef("");
@@ -39,12 +37,9 @@ const LoginModal = ({closeModal}) => {
             <motion.input layoutId="email" ref={emailRef} variants={input} initial="hidden" animate="show" exit="hidden" type="email" placeholder="Email" />
             <motion.input layoutId="password" ref={passwordRef} variants={input} initial="hidden" animate="show" exit="hidden" type="password" placeholder="Password" />
             <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
-            {/* <Link to="/signup"> */}
-                <motion.button onClick={closeModal} initial={{ y: 100 }} animate={{ y: 0, transition: { delay: .65, duration: .6, ease: [0.9, 0, 0.1, 1] } }} whileHover={{ scale: 1.03 }} className="secondary">Sign Up</motion.button>
-            {/* </Link> */}
+            <motion.button onClick={closeModal} initial={{ y: 100 }} animate={{ y: 0, transition: { delay: .65, duration: .6, ease: [0.9, 0, 0.1, 1] } }} whileHover={{ scale: 1.03 }} className="secondary">Sign Up</motion.button>
         </motion.form>
-        {/* <Link to="/"> */}
-            <motion.div className="backdrop"
+        <motion.div className="backdrop"
             layoutId="backdrop"
             variants={backdrop}
             initial="hidden"
@@ -52,7 +47,6 @@ const LoginModal = ({closeModal}) => {
             exit="hidden"
             onClick={closeModal}
         />
-        {/* </Link> */}
     </>
 };
 
