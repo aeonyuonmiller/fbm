@@ -20,10 +20,6 @@ const item = {
 hidden: { opacity: 0, y: 20 },
 show: { opacity: 1, y: 0 },
 };
-const speed = {
-hidden: { opacity: 0 },
-enter:  { opacity: 1, rotate: 360 },
-};
 
 const Landingpage = () => {
 
@@ -37,14 +33,6 @@ const Landingpage = () => {
   
   return <>
       <div className="bg" />
-          <motion.img
-            initial="hidden"
-            animate="enter"
-            variants={speed}
-            src="/logo.png"
-            className="logo"
-            alt="Femme Bass Mafia"
-      />
           <Hero />
           <MentorList />
     
