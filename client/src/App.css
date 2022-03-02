@@ -67,11 +67,8 @@ nav ul li:hover {
 
 .logo {
   position: fixed;
-  /* right: 2em; */
-  left: 2em;
-  /* left: calc(50% - 40px); */
-  top: 2em;
-  /* top: calc(50vh - 40px); */
+  left: 1.2em;
+  top: 1em;
   width: 80px;
   filter: drop-shadow(0 1px 0.5px rgba(36, 41, 0, 0));
   z-index: 105;
