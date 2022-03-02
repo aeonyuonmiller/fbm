@@ -1,7 +1,16 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+import LoginModal from "../LoginModal/LoginModal";
+
 export default function Nav() {
+
+  // modal
+  // const [modal, setModal] = useState(false)
+
+  // function closeModal() {setModal(false);}
+  // function openModal() {setModal(true);}
 
     // animations
   const container = {
@@ -18,10 +27,10 @@ export default function Nav() {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
   };
-  const speed = {
-    hidden: { opacity: 0 },
-    enter: { opacity: 1, rotate: 360 },
-  };
+  // const speed = {
+  //   hidden: { opacity: 0 },
+  //   enter: { opacity: 1, rotate: 360 },
+  // };
     
     return <nav>
             <motion.ul variants={container} initial="hidden" animate="show">
@@ -35,13 +44,11 @@ export default function Nav() {
                   tabIndex={1}
                   variants={item}
                   className="loginBtn"
-                  // onClick={toggleModal}
-                  // onClick={() => {
-                  //   setOpenModal(true);
-                  // }}
+                  // onClick={openModal}
                 >
                   Login
                 </motion.li>
             </motion.ul>
+      
           </nav>;
 }

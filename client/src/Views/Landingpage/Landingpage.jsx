@@ -27,8 +27,13 @@ enter:  { opacity: 1, rotate: 360 },
 
 const Landingpage = () => {
 
-  // modal
-  const [openModal, setOpenModal] = useState(false)
+  const [modal, setModal] = useState(false);
+  function handleOpen() {
+    setModal(true);
+  };
+  function handleClose() {
+    setModal(false);
+  };
   
   return <>
       <div className="bg" />
@@ -42,9 +47,6 @@ const Landingpage = () => {
       />
           <Hero />
           <MentorList />
-      {/* <AnimatePresence exitBeforeEnter> */}
-    {openModal && <LoginModal />}
-      {/* </AnimatePresence>  */}
     
           <div className="content">
             <h2>Roboto Typeface</h2>
@@ -54,7 +56,11 @@ const Landingpage = () => {
               of DJing.
             </p>
           </div>
-          <Footer />
+      <Footer />
+    
+      {/* <AnimatePresence exitBeforeEnter> */}
+        {modal && <LoginModal openModal={setModal} />}
+      {/* </AnimatePresence>  */}
   </>;
 };
 

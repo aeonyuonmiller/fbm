@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
-import { Link, useLocation } from "react-router-dom";
+// import { createPortal } from 'react-dom';
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import './LoginModal.css';
-import Landingpage from '../../Views/Landingpage/Landingpage';
+// import Landingpage from '../../Views/Landingpage/Landingpage';
 
 const LoginModal = ({closeModal}) => {
     
@@ -53,12 +53,6 @@ const LoginModal = ({closeModal}) => {
             onClick={closeModal}
         />
         {/* </Link> */}
-
-        <Landingpage />
-
-        {/* <Routes>
-            <Route path="signup" element={<SignUpModal />} />
-        </Routes> */}
     </>
 };
 
