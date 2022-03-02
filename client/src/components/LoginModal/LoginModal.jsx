@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import './LoginModal.css';
 import Landingpage from '../../Views/Landingpage/Landingpage';
 
-const LoginModal = () => {
+const LoginModal = ({closeModal}) => {
     
     // useRefs
     const emailRef = useRef("");
@@ -39,16 +39,20 @@ const LoginModal = () => {
             <motion.input layoutId="email" ref={emailRef} variants={input} initial="hidden" animate="show" exit="hidden" type="email" placeholder="Email" />
             <motion.input layoutId="password" ref={passwordRef} variants={input} initial="hidden" animate="show" exit="hidden" type="password" placeholder="Password" />
             <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
-            <Link to="/signup"><motion.button initial={{y:100}} animate={{y:0, transition:{delay:.65, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }} className="secondary">Sign Up</motion.button></Link>
+            {/* <Link to="/signup"> */}
+                <motion.button onClick={closeModal} initial={{ y: 100 }} animate={{ y: 0, transition: { delay: .65, duration: .6, ease: [0.9, 0, 0.1, 1] } }} whileHover={{ scale: 1.03 }} className="secondary">Sign Up</motion.button>
+            {/* </Link> */}
         </motion.form>
-        <Link to="/"><motion.div className="backdrop"
+        {/* <Link to="/"> */}
+            <motion.div className="backdrop"
             layoutId="backdrop"
             variants={backdrop}
             initial="hidden"
             animate="show"
             exit="hidden"
-            // onClick={closeModal}
-        /></Link>
+            onClick={closeModal}
+        />
+        {/* </Link> */}
 
         <Landingpage />
 

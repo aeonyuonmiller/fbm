@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { motion } from "framer-motion";
 import { Footer } from "../../components/Footer/Footer";
 import { Hero } from "../../components/Hero/Hero";
 import MentorList from "../../components/MentorList/MentorList";
+import LoginModal from '../../components/LoginModal/LoginModal';
 
 // animations
 const container = {
@@ -25,6 +26,10 @@ enter:  { opacity: 1, rotate: 360 },
 };
 
 const Landingpage = () => {
+
+  // modal
+  const [openModal, setOpenModal] = useState(false)
+  
   return <>
       <div className="bg" />
           <motion.img
@@ -37,9 +42,10 @@ const Landingpage = () => {
       />
           <Hero />
           <MentorList />
-          {/* <AnimatePresence exitBeforeEnter>
-          {openModal && <LoginModal closeModal={toggleModal} />}
-        </AnimatePresence>  */}
+      {/* <AnimatePresence exitBeforeEnter> */}
+    {openModal && <LoginModal />}
+      {/* </AnimatePresence>  */}
+    
           <div className="content">
             <h2>Roboto Typeface</h2>
             <p>

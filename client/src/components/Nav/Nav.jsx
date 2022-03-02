@@ -25,23 +25,23 @@ export default function Nav() {
     
     return <nav>
             <motion.ul variants={container} initial="hidden" animate="show">
-              <Link to="/dashboard"><motion.li variants={item} tabIndex={1}>
-                Dashboard
-              </motion.li></Link>
-              <Link to="/login">
+              <Link to="/dashboard">
+                <motion.li variants={item} tabIndex={1}>
+                  Dashboard
+                </motion.li>
+              </Link>
+              {/* <Link to="/login"> */}
                 <motion.li
                   tabIndex={1}
                   variants={item}
                   className="loginBtn"
                   // onClick={toggleModal}
-                  // inline isn't the cleanest
                   // onClick={() => {
                   //   setOpenModal(true);
                   // }}
                 >
                   Login
                 </motion.li>
-              </Link>
             </motion.ul>
           </nav>;
 }
