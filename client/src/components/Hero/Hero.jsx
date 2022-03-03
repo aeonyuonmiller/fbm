@@ -4,7 +4,7 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion'
 
 const swipe = {
     hidden: {opacity:0, y:-30},
-    enter: {opacity:1, y:0, transition:{ delay:0.6, }},
+    enter: {opacity:1, y:0, transition:{ delay:0.3, }},
     exit: {opacity:0, y:-20 }
 };
 
@@ -18,7 +18,6 @@ export const Hero = () => {
     
     return (
         <div className="hero">
-            {/* gfx-in-css */}
             <motion.div
                 className="pattern" 
                 initial="hidden"
