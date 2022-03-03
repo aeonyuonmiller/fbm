@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import './LoginModal.css';
 
-const LoginModal = ({closeModal}) => {    
+const LoginModal = (props) => {    
     // useRefs
     const emailRef = useRef("");
     const passwordRef = useRef("");
@@ -37,7 +37,7 @@ const LoginModal = ({closeModal}) => {
             <motion.input layoutId="email" ref={emailRef} variants={input} initial="hidden" animate="show" exit="hidden" type="email" placeholder="Email" />
             <motion.input layoutId="password" ref={passwordRef} variants={input} initial="hidden" animate="show" exit="hidden" type="password" placeholder="Password" />
             <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
-            <motion.button onClick={closeModal} initial={{ y: 100 }} animate={{ y: 0, transition: { delay: .65, duration: .6, ease: [0.9, 0, 0.1, 1] } }} whileHover={{ scale: 1.03 }} className="secondary">Sign Up</motion.button>
+            <motion.button onClick={props.closeModal} initial={{ y: 100 }} animate={{ y: 0, transition: { delay: .65, duration: .6, ease: [0.9, 0, 0.1, 1] } }} whileHover={{ scale: 1.03 }} className="secondary">Sign Up</motion.button>
         </motion.form>
         <motion.div className="backdrop"
             layoutId="backdrop"
@@ -45,7 +45,7 @@ const LoginModal = ({closeModal}) => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            onClick={closeModal}
+            onClick={props.closeModal}
         />
     </>
 };

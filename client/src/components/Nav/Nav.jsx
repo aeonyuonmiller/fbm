@@ -7,10 +7,10 @@ import LoginModal from "../LoginModal/LoginModal";
 export default function Nav() {
 
   // modal
-  // const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(false)
 
-  // function closeModal() {setModal(false);}
-  // function openModal() {setModal(true);}
+  function closeModal() {setModal(false);}
+  function openModal() {setModal(true);}
 
     // animations
   const container = {
@@ -44,7 +44,7 @@ export default function Nav() {
                   tabIndex={1}
                   variants={item}
                   className="loginBtn"
-                  // onClick={openModal}
+                  onClick={openModal}
                 >
                   Login
                 </motion.li>
