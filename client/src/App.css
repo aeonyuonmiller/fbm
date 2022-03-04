@@ -61,10 +61,6 @@ nav ul li:after {
   background: var(--secondary5);
 }
 
-nav ul li:hover {
-  transform: scale(1.08);
-}
-
 .logo {
   position: fixed;
   left: 1.2em;

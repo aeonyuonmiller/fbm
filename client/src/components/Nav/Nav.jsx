@@ -27,6 +27,7 @@ export default function Nav() {
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
+    hover: { scale: 0.95, transition: {type: "tween", duration: 0.05}}
   };
   // const speed = {
   //   hidden: { opacity: 0 },
@@ -36,7 +37,10 @@ export default function Nav() {
     return <nav>
             <motion.ul variants={container} initial="hidden" animate="show">
               <Link to="/dashboard">
-                <motion.li variants={item} tabIndex={1}>
+                <motion.li
+                  variants={item}
+                  tabIndex={1}
+                  whileHover={item.hover}>
                   Dashboard
                 </motion.li>
               </Link>
@@ -46,6 +50,7 @@ export default function Nav() {
                   variants={item}
                   className="loginBtn"
                   onClick={openModal}
+                  whileHover={item.hover}
                 >
                   Login
                 </motion.li>
