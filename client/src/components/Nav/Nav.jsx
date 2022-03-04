@@ -2,17 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import LoginModal from "../LoginModal/LoginModal";
+const Nav = (props,{ openModalProps }) => {
 
-export default function Nav() {
-
-  // modal
-  const [modal, setModal] = useState(false)
-
-  function closeModal() {setModal(false);}
-  function openModal() {setModal(true);}
-
-    // animations
+  // animations
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -44,17 +36,19 @@ export default function Nav() {
                   Dashboard
                 </motion.li>
               </Link>
-              {/* <Link to="/login"> */}
-                <motion.li
-                  tabIndex={1}
-                  variants={item}
-                  className="loginBtn"
-                  onClick={openModal}
-                  whileHover={item.hover}
-                >
-                  Login
-                </motion.li>
+              <motion.li
+                tabIndex={1}
+                variants={item}
+                className="loginBtn"
+                onClick={() => props.openModalProps()}
+                // onClick={openModalProps}
+                whileHover={item.hover}
+              >
+                Login
+              </motion.li>
             </motion.ul>
       
           </nav>;
 }
+
+export default Nav

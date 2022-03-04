@@ -18,36 +18,38 @@ function App() {
 
   // modal
   const [modal, setModal] = useState(false);
-  function closeModal() {
+
+  const closeModal = () => {
     setModal(false);
-  }
-  function openModal() {
+  };
+  const openModal = () => {
+    console.log("Click");
     setModal(true);
-  }
+  };
 
   return (
-    <LocomotiveScrollProvider containerRef={containerRef}>
-      <MentorsContextProvider>
-        <Router>
-          <MotionConfig reducedMotion="user">
-            <Link to="/">
-              <motion.img
-                initial="hidden"
-                animate="enter"
-                variants={speed}
-                src="/logo.png"
-                className="logo"
-                alt="Femme Bass Mafia"
-              />
-            </Link>
-            {/* data-scroll-container ref={containerRef} */}
-            <AnimatedRoutes />
-            <Nav />
-            {modal && <LoginModal />}
-          </MotionConfig>
-        </Router>
-      </MentorsContextProvider>
-    </LocomotiveScrollProvider>
+    // <LocomotiveScrollProvider containerRef={containerRef}>
+    <MentorsContextProvider>
+      <Router>
+        <MotionConfig reducedMotion="user">
+          <Link to="/">
+            <motion.img
+              initial="hidden"
+              animate="enter"
+              variants={speed}
+              src="/logo.png"
+              className="logo"
+              alt="Femme Bass Mafia"
+            />
+          </Link>
+          {/* data-scroll-container ref={containerRef} */}
+          <AnimatedRoutes />
+          <Nav openModalProps={openModal} />
+          {modal && <LoginModal />}
+        </MotionConfig>
+      </Router>
+    </MentorsContextProvider>
+    // </LocomotiveScrollProvider>
   );
 }
 

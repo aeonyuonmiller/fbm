@@ -1,5 +1,7 @@
 import { motion } from "framer-motion"
 
+// JUST A EXAMPLE – not used anywhere
+
 const animations = {
     initial: { opacity: 0, x: 100 },
     animate: { opacity: 1, x: 0 },
@@ -12,7 +14,7 @@ const AnimatedPage = ({ children }) => {
             initial="initial" animate="animate" exit="exit"
         >
             {children}
-            </motion.div>
+        </motion.div>
     )
 }
 
