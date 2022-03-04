@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 // import { createPortal } from 'react-dom';
 import { useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import './LoginModal.css';
 
-const LoginModal = (props) => {    
+const LoginModal = (props,{isVisible}) => {    
     // useRefs
     const emailRef = useRef("");
     const passwordRef = useRef("");
@@ -26,7 +26,9 @@ const LoginModal = (props) => {
         hidden: { opacity: 0 }
     }
     
-    return <>
+    return <AnimatePresence>
+        {isVisible && 
+        <>
         <motion.form layoutId="form" className="login"
             variants={container}
             initial="hidden"
@@ -46,8 +48,10 @@ const LoginModal = (props) => {
             animate="show"
             exit="hidden"
             onClick={props.closeModal}
-        />
-    </>
+            />
+        </>
+    }
+    </AnimatePresence>
 };
 
 export default LoginModal;
