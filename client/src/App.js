@@ -45,7 +45,7 @@ function App() {
           {/* data-scroll-container ref={containerRef} */}
           <AnimatedRoutes />
           <Nav openModalProps={openModal} />
-          {modal && <LoginModal />}
+          {modal && <LoginModal closeModal={closeModal} />}
         </MotionConfig>
       </Router>
     </MentorsContextProvider>

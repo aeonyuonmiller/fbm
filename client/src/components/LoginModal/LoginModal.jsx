@@ -4,13 +4,13 @@ import { useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import './LoginModal.css';
 
-const LoginModal = (props,{modal}) => {    
+const LoginModal = (props,{ closeModal }) => {    
     // useRefs
     const emailRef = useRef("");
     const passwordRef = useRef("");
 
     // location log
-    const location = useLocation()
+    // const location = useLocation()
 
     const container = {
         hidden: { opacity: 0, scale: 0.9, x: 200 },
@@ -26,7 +26,7 @@ const LoginModal = (props,{modal}) => {
         hidden: { opacity: 0 }
     }
     
-    return <AnimatePresence>     
+    return <AnimatePresence exitBeforeEnter>
         <motion.form layoutId="form" className="login"
             variants={container}
             initial="hidden"
