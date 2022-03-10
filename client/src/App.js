@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import { motion, MotionConfig } from "framer-motion";
 import { MentorsContextProvider } from "./Context/mentorsContext";
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { BrowserRouter as Router } from "react-router-dom";
 import AnimatedRoutes from "./AnimatedRoutes";
 import Nav from "./components/Nav/Nav";
@@ -16,19 +15,17 @@ function App() {
     enter: { opacity: 1, rotate: 360 },
   };
 
-  // modal
-  const [modal, setModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
 
   const closeModal = () => {
-    setModal(false);
-  };
-  const openModal = () => {
-    console.log("Click");
-    setModal(true);
+    setShowModal(false);
   };
 
   return (
-    // <LocomotiveScrollProvider containerRef={containerRef}>
     <MentorsContextProvider>
       <Router>
         <MotionConfig reducedMotion="user">
@@ -42,10 +39,9 @@ function App() {
               alt="Femme Bass Mafia"
             />
           </Link>
-          {/* data-scroll-container ref={containerRef} */}
           <AnimatedRoutes />
-          <Nav openModalProps={openModal} />
-          {modal && <LoginModal closeModal={closeModal} />}
+          <Nav openModal={openModal} />
+          <LoginModal showModal={showModal} closeModal={closeModal} />
         </MotionConfig>
       </Router>
     </MentorsContextProvider>

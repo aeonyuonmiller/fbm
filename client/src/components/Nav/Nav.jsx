@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const Nav = (props,{ openModalProps }) => {
+const Nav = ({ openModal }) => {
 
   // animations
   const container = {
@@ -40,7 +40,8 @@ const Nav = (props,{ openModalProps }) => {
                 tabIndex={1}
                 variants={item}
                 className="loginBtn"
-                onClick={() => props.openModalProps()}
+                // onClick={() => props.openModalProps()}
+                onClick={openModal}
                 // onClick={openModalProps}
                 whileHover={item.hover}
               >

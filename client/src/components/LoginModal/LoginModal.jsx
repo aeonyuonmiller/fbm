@@ -1,16 +1,11 @@
 import { useRef } from 'react';
-// import { createPortal } from 'react-dom';
-import { useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import './LoginModal.css';
 
-const LoginModal = (props,{ closeModal }) => {    
+const LoginModal = ({ showModal, closeModal }) => {    
     // useRefs
     const emailRef = useRef("");
     const passwordRef = useRef("");
-
-    // location log
-    // const location = useLocation()
 
     const container = {
         hidden: { opacity: 0, scale: 0.9, x: 200 },
@@ -26,28 +21,31 @@ const LoginModal = (props,{ closeModal }) => {
         hidden: { opacity: 0 }
     }
     
-    return <AnimatePresence exitBeforeEnter>
-        <motion.form layoutId="form" className="login"
-            variants={container}
-            initial="hidden"
-            animate="show"
-            exit="exit"
-            style={{ originX: 1 }}>
-            <h5 layoutId="title">Login</h5>
-            <motion.input layoutId="email" ref={emailRef} variants={input} initial="hidden" animate="show" exit="hidden" type="email" placeholder="Email" />
-            <motion.input layoutId="password" ref={passwordRef} variants={input} initial="hidden" animate="show" exit="hidden" type="password" placeholder="Password" />
-            <motion.button initial={{y:100}} animate={{y:0, transition:{delay:.5, duration: .6, ease:[0.9, 0, 0.1, 1]}}} whileHover={{ scale:1.03 }}>Login</motion.button>
-            <motion.button onClick={props.closeModal} initial={{ y: 100 }} animate={{ y: 0, transition: { delay: .65, duration: .6, ease: [0.9, 0, 0.1, 1] } }} whileHover={{ scale: 1.03 }} className="secondary">Sign Up</motion.button>
-        </motion.form>
-        <motion.div className="backdrop"
-            layoutId="backdrop"
-            variants={backdrop}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            onClick={props.closeModal}
-            />
-    </AnimatePresence>
-};
+    return (
+    
+    <>
+        <AnimatePresence initial={false}>
+            {showModal && (
+                <>
+                    <motion.form layoutId="form" className="login" variants={container} initial="hidden" animate="show" exit="exit" style={{ originX: 1 }}>
+                        <h5 layoutId="title">Login</h5>
+                        <motion.input layoutId="email" ref={emailRef} variants={input} initial="hidden" animate="show" exit="hidden" type="email" placeholder="Email" />
+                        <motion.input layoutId="password" ref={passwordRef} variants={input} initial="hidden" animate="show" exit="hidden" type="password" placeholder="Password" />
+                        <motion.button initial={{ y: 100 }} animate={{ y: 0, transition: { delay: .5, duration: .6, ease: [0.9, 0, 0.1, 1] } }} whileHover={{ scale: 1.03 }}>Login</motion.button>
+                        <motion.button onClick={closeModal} initial={{ y: 100 }} animate={{ y: 0, transition: { delay: .65, duration: .6, ease: [0.9, 0, 0.1, 1] } }} whileHover={{ scale: 1.03 }} className="secondary">Sign Up</motion.button>
+                    </motion.form>
+                    <motion.div className="backdrop"
+                        layoutId="backdrop"
+                        variants={backdrop}
+                        initial="hidden"
+                        animate="show"
+                        exit="hidden"
+                        onClick={closeModal}
+                    />
+                </>
+            )}
+        </AnimatePresence>
+    </>
+  )};
 
 export default LoginModal;
