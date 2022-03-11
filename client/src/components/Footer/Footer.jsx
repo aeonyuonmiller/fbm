@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 
 export const Footer = () => {
-    return <div className='footer'>
+    return <div className="footer">
       <img src="./logo.png" />
   </div>;
 };

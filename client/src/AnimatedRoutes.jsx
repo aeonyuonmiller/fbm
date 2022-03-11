@@ -19,9 +19,6 @@ const AnimatedRoutes = () => {
         <Route path="/dashboard" children={<Dashboard/>}/>
         <Route path="*" children={<Error />}/>
       </Switch>
-
-      {/* Show the modal when a background page is set
-      {background && <Route path="/img/:id" children={<LoginModal />} />} */}
     </AnimatePresence>
   );
 };
